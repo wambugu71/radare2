@@ -3021,7 +3021,7 @@ static bool anal_fcn_list_bb(RCore *core, const char *input, bool one) {
 		one = true;
 		input++;
 	}
-	if (input && *input) {
+	if (R_STR_ISNOTEMPTY (input)) {
 		addr = bbaddr = r_num_math (core->num, input);
 		if (!addr && *input != '0') {
 			addr = core->offset;
@@ -12911,7 +12911,7 @@ static int cmd_anal(void *data, const char *input) {
 	case 'b': // "ab"
 		switch (input[1]) {
 		case '.': // "ab."
-			r_core_cmd0 (core, "ab $$");
+			r_core_cmd_call (core, "afbi");
 			break;
 		case 'a': // "aba"
 			r_core_cmdf (core, "aeab%s", input + 1);
