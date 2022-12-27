@@ -1751,7 +1751,7 @@ static int analop64_esil(RAnal *a, RAnalOp *op, ut64 addr, const ut8 *buf, int l
 					r_strbuf_appendf (&op->esil, "%"PFMT64d",%s,+",
 							MEMDISP64 (1), MEMBASE64 (1));
 				}
-				r_strbuf_append (&op->esil, ",DUP,tmp,=");
+		//		r_strbuf_append (&op->esil, ",DUP,tmp,=");
 
 				// I assume the DUPs here previously were to handle preindexing
 				// but it was never finished?
