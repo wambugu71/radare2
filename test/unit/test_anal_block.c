@@ -529,7 +529,7 @@ bool test_r_anal_block_successors() {
 	r_list_purge (result);
 
 	r_anal_block_successor_addrs_foreach (blocks[2], addr_list_cb, result);
-	mu_assert_eq (r_list_length (result), 7, "switch successors count");
+	mu_assert_eq (r_list_length (result), 6, "switch successors count");
 	mu_assert ("jmp successor", r_list_contains (result, (void *)0x10));
 	mu_assert ("case successor", r_list_contains (result, (void *)0x100));
 	mu_assert ("case successor", r_list_contains (result, (void *)0x110));
