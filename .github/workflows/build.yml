@@ -44,6 +44,7 @@ jobs:
         sudo apt-get --assume-yes update
         sudo apt install --assume-yes musl-tools
     - name: Building static r2 with acr
+         
       run: |
         cp -f dist/plugins-cfg/plugins.static.nogpl.cfg plugins.cfg
         NOLTO=1 sys/static.sh
